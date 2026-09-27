@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="刘锦桉的个人主页 · 广东工业大学集成电路学院 · 专注于嵌入式系统、无刷电机FOC、硬件EDA与边缘AI">
+  <meta name="description" content="黄伟诚的个人主页 · 广东工业大学信息工程学院 · 电赛省一等奖 / 蓝桥杯国赛二等奖 · 专注于嵌入式系统、无刷电机FOC、硬件PCB设计与边缘AI">
   <meta name="theme-color" content="#0f172a">
-  <title>刘锦桉 · 个人主页 | Embedded & IC Systems</title>
+  <title>黄伟诚 · 个人主页 | Embedded Systems & Robotics</title>
   <style>
     :root {
       --bg: #f8fafc;
@@ -19,6 +19,8 @@
       --primary-hover: #1d4ed8;
       --primary-light: #eff6ff;
       --accent: #0ea5e9;
+      --gold: #d97706;
+      --gold-light: #fef3c7;
       --tag-bg: #f1f5f9;
       --tag-border: #cbd5e1;
     }
@@ -34,6 +36,8 @@
         --primary: #38bdf8;
         --primary-hover: #0ea5e9;
         --primary-light: #0c2d48;
+        --gold: #fbbf24;
+        --gold-light: #3d2c06;
         --tag-bg: #1e293b;
         --tag-border: #334155;
       }
@@ -93,7 +97,7 @@
     .hero { padding: 64px 0 60px; overflow: hidden; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.18fr 0.82fr;
       gap: 56px;
       align-items: center;
     }
@@ -186,7 +190,7 @@
       background: #10b981;
     }
 
-    /* Identity Chip Card */
+    /* Hardware & Competition Badge Card */
     .id-card {
       background: linear-gradient(145deg, #0c182b, #112642);
       border: 1px solid #1e3a5f;
@@ -232,7 +236,7 @@
       box-shadow: 0 0 0 8px rgba(30, 58, 95, 0.6), 0 0 25px rgba(56, 189, 248, 0.25);
     }
     .id-core strong {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
       letter-spacing: 6px;
       line-height: 1.1;
@@ -270,6 +274,41 @@
     }
     .section-title { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
     .section-desc { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+    /* Honors & Awards Grid */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .award-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      transition: all .2s;
+    }
+    .award-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: 0 8px 20px -8px rgba(217, 119, 6, 0.2);
+    }
+    .award-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--gold-light);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .award-info h4 { font-size: 14.5px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .award-info p { font-size: 12px; color: var(--muted); }
 
     /* About & Skills Grid */
     .about-layout {
@@ -346,6 +385,10 @@
       margin-bottom: 14px;
       width: fit-content;
     }
+    .project-badge.gold {
+      color: var(--gold);
+      background: var(--gold-light);
+    }
     .project-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
     .project-card p { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
     .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
@@ -358,58 +401,6 @@
       color: var(--muted);
       font-weight: 500;
     }
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--primary);
-      margin-top: 14px;
-    }
-
-    /* Interactive Game Banner */
-    .game-banner {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: #ffffff;
-      border-radius: 14px;
-      padding: 32px 36px;
-      margin-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border: 1px solid #334155;
-    }
-    .game-banner h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: #f8fafc; }
-    .game-banner p { font-size: 13.5px; color: #94a3b8; line-height: 1.7; }
-
-    /* Journey Roadmap */
-    .roadmap-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .roadmap-step {
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 24px;
-      position: relative;
-    }
-    .roadmap-step::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 24px;
-      right: 24px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 3px 3px 0 0;
-    }
-    .step-idx { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 2px; }
-    .roadmap-step h4 { font-size: 16px; font-weight: 700; margin: 10px 0 8px; }
-    .roadmap-step p { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
     /* Contact Card */
     .contact-box {
@@ -459,9 +450,7 @@
     @media (max-width: 860px) {
       .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-layout { grid-template-columns: 1fr; }
-      .roadmap-grid { grid-template-columns: 1fr; }
       .contact-box { grid-template-columns: 1fr; padding: 28px; }
-      .game-banner { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 600px) {
       header nav a:not(:first-child) { display: none; }
@@ -477,13 +466,13 @@
     <div class="wrap">
       <a class="brand" href="#top" aria-label="回到顶部">
         <span class="brand-cube"></span>
-        <span>刘锦桉 · 主页</span>
+        <span>黄伟诚 · 个人主页</span>
       </a>
       <nav aria-label="主导航">
         <a href="#about">关于我</a>
+        <a href="#honors">竞赛荣誉</a>
         <a href="#skills">技术能力</a>
-        <a href="#projects">工程项目</a>
-        <a href="#roadmap">规划展望</a>
+        <a href="#projects">工程实战</a>
         <a href="#contact">联系交流</a>
       </nav>
     </div>
@@ -494,34 +483,34 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">EMBEDDED SYSTEMS & IC DESIGN</div>
-          <h1>你好，我是<br><em>刘锦桉。</em></h1>
+          <div class="eyebrow">EMBEDDED ARCHITECTURE & ROBOTICS</div>
+          <h1>你好，我是<br><em>黄伟诚。</em></h1>
           <p class="lead">
-            广东工业大学 · 集成电路学院 2026级集成电路1班。<br>
-            专注于嵌入式底层与控制算法（FOC / FreeRTOS）、硬件电路设计（EDA / PCB）与端侧边缘智能（NPU / YOLO11）。保持好奇，以工匠精神把想法变成高可用实体。
+            广东工业大学 · 信息工程学院 2025级电子信息类9班（学习委员）。<br>
+            集成电路创新团队嵌入式组骨干成员。全国大学生电子设计竞赛（TI杯）省一等奖、蓝桥杯全国二等奖获得者。<br>
+            专注于嵌入式实时多任务解耦（FreeRTOS）、无刷电机 FOC 矢量控制、4 层精密 PCB 设计与端侧边缘智能感知。
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="#projects">
               浏览工程项目
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </a>
-            <a class="btn btn-outline" href="snake.html">
-              玩芯片 3D 贪吃蛇 🎮
+            <a class="btn btn-outline" href="#honors">
+              查看竞赛荣誉 🏆
             </a>
-            <a class="btn btn-outline" href="output/pdf/刘锦桉_个人简介_详细版.pdf" download>
-              下载个人简历 PDF
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <a class="btn btn-outline" href="https://github.com/qiezibufu-ai" target="_blank" rel="noopener noreferrer">
+              GitHub 主页 ↗
             </a>
           </div>
           <div class="meta-pills">
-            <span class="meta-item"><span class="dot"></span>广东省广州市 · GDUT 大学城校区</span>
-            <span class="meta-item">· 嵌入式系统 / 集成电路</span>
-            <span class="meta-item">· 电机控制 FOC / 边缘视觉</span>
+            <span class="meta-item"><span class="dot"></span>广东工业大学 · 大学城校区</span>
+            <span class="meta-item">· 学号: 3125002391</span>
+            <span class="meta-item">· 班级学委 / 集创团队骨干</span>
           </div>
         </div>
 
         <!-- Silicon Hardware Badge -->
-        <div class="id-card" aria-label="集成电路与电机控制主题名片">
+        <div class="id-card" aria-label="硬件与控制工程名片">
           <svg class="id-card-circuit" viewBox="0 0 400 350" preserveAspectRatio="none" fill="none">
             <path d="M0 80h90l35 35h50M0 200h130M400 120h-70l-30 30h-40M400 230h-90l-30-30h-40M180 0v70l20 20v40M250 0v60l-25 25v45M0 260h80l40-40h50M400 60h-60l-45 45h-35" stroke="currentColor" stroke-width="1.2"/>
             <circle cx="90" cy="80" r="3.5" fill="currentColor"/>
@@ -530,21 +519,21 @@
             <circle cx="340" cy="60" r="3.5" fill="currentColor"/>
           </svg>
           <div class="id-top">
-            <span>INTEGRATED CIRCUITS</span>
-            <span>CLASS 01 · 2026</span>
+            <span>GDUT · INFO ENGINEERING</span>
+            <span>CLASS 09 · 2025</span>
           </div>
           <div class="id-core">
-            <strong>LJA</strong>
-            <small>FOC & HARDWARE</small>
+            <strong>HWC</strong>
+            <small>FOC & EMBEDDED</small>
           </div>
           <div class="id-specs">
             <div class="id-spec-item">
-              <p>ARCHITECTURE</p>
-              <strong>ARM & RISC-V</strong>
+              <p>COMPETITION</p>
+              <strong>电赛省一 / 蓝桥国二</strong>
             </div>
             <div class="id-spec-item">
-              <p>ALGORITHM</p>
-              <strong>FOC / SVPWM</strong>
+              <p>CONTROL</p>
+              <strong>FOC / FreeRTOS</strong>
             </div>
             <div class="id-spec-item">
               <p>HARDWARE</p>
@@ -556,30 +545,92 @@
     </section>
 
     <div class="wrap">
+      <!-- Honors Section -->
+      <section class="section" id="honors">
+        <div class="section-head">
+          <div class="section-tag">01 / HONORS & AWARDS</div>
+          <h2 class="section-title">竞赛获奖与学术荣誉</h2>
+          <p class="section-desc">在省级与国家级高水平科技竞赛中攻坚克难、斩获佳绩。</p>
+        </div>
+
+        <div class="awards-grid">
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <div class="award-info">
+              <h4>全国大学生电子设计竞赛（TI杯）</h4>
+              <p><strong>广东省赛区一等奖</strong> · H题 车载平衡滚球控制系统 (队长刘浩誉/黄伟诚/韦柏境)</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <div class="award-info">
+              <h4>蓝桥杯全国软件与信息技术专业人才大赛</h4>
+              <p><strong>全国总决赛二等奖（国二）</strong> · 软件与算法领域国家级大奖</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <div class="award-info">
+              <h4>蓝桥杯全国软件与信息技术大赛</h4>
+              <p><strong>广东省赛区一等奖（省一）</strong> · 顺利晋级全国总决赛</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="award-info">
+              <h4>信息工程学院第十一届“帮普-科创杯”</h4>
+              <p><strong>一等奖</strong> · 作品《MotionGuard 基于单片机的信息采集与信号传输系统》</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="award-info">
+              <h4>广东工业大学 优秀学生奖学金</h4>
+              <p><strong>优秀学生三等奖学金</strong> · 学业分 87.18 / 综合测评班级前 25% (第11名)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- About Section -->
       <section class="section" id="about">
         <div class="section-head">
-          <div class="section-tag">01 / PROFILE</div>
-          <h2 class="section-title">关于我与技术热忱</h2>
-          <p class="section-desc">从好奇心出发，在理论与动手中探寻真知。</p>
+          <div class="section-tag">02 / PROFILE</div>
+          <h2 class="section-title">个人履历与专业素养</h2>
+          <p class="section-desc">笃行致远，严谨求真。</p>
         </div>
         <div class="about-layout">
           <div class="about-text">
             <p>
-              大家好，我是<strong>刘锦桉</strong>，来自广东省广州市，现就读于<strong>广东工业大学集成电路学院</strong>（2026级集成电路1班）。
+              我是<strong>黄伟诚</strong>，广东工业大学信息工程学院 2025级电子信息类9班学生，现任班级<strong>学习委员</strong>，高中毕业于<strong>华中师范大学珠海附属中学</strong>。
             </p>
             <p>
-              我对硬件底层的运行机制与智能运动控制充满热爱。大一开始便深入钻研 STM32、TI MSPM0、ESP32 与 RISC-V 体系架构，精通 FreeRTOS 实时多任务解耦，亲手设计并打样 4 层高频/功率混合 PCB 控制板。
+              在校期间思想端正、学风扎实，学业考核得分 <strong>87.18 分</strong>，零挂科记录，综合测评稳居班级前列，荣获学校优秀学生奖学金。热心班级建设与社会实践，曾代表学校赴高中母校开展招生宣讲社会实践。
             </p>
             <p>
-              在算法控制上，我深入推导并落地无刷电机 FOC 磁场定向控制（Park/Clarke 变换、SVPWM），完成了轮腿自平衡机器人的动力学解算。在课余时间，我喜欢在绿茵场上踢足球挥洒汗水，也热衷于独立开发并运营线上社群。
+              作为<strong>集成电路创新团队嵌入式组骨干成员与技术面试官</strong>，我深入参与团队技术考核出题与选拔评审工作。在工程技术上，坚持“软硬件全栈闭环”：从原理图设计、4 层高频功率 PCB 绘制焊接，到 FreeRTOS 固件架构、FOC 矢量控制与运动学动力学算法解算，均具备独立落地与团队带领能力。
             </p>
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">
-              <span class="tech-tag">广东 · 广州</span>
               <span class="tech-tag">广东工业大学</span>
-              <span class="tech-tag">集成电路学院</span>
-              <span class="tech-tag">嵌入式组 & IC组</span>
-              <span class="tech-tag">足球爱好</span>
+              <span class="tech-tag">信息工程学院</span>
+              <span class="tech-tag">学号: 3125002391</span>
+              <span class="tech-tag">班级学习委员</span>
+              <span class="tech-tag">集创团队嵌入式组骨干</span>
+              <span class="tech-tag">电赛省一队伍</span>
             </div>
           </div>
 
@@ -588,8 +639,8 @@
               <div class="skill-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
               </div>
-              <h3>嵌入式与系统架构</h3>
-              <p>精通 STM32F4/G4、TI MSPM0、ESP32-P4 (RISC-V)；熟练应用 FreeRTOS 多任务、分层解耦架构 (App/Service/BSP) 与 LetterShell 终端。</p>
+              <h3>嵌入式系统与架构</h3>
+              <p>深耕 STM32F4/G4、TI MSPM0G3507、ESP32-S3/P4。精通 FreeRTOS 实时多任务解耦、App/Service/Platform/BSP 分层架构与 LetterShell 交互控制台。</p>
             </div>
 
             <div class="skill-card">
@@ -597,7 +648,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M7 7l3 3M14 14l3 3"/></svg>
               </div>
               <h3>电机控制与 FOC 算法</h3>
-              <p>精通无刷直流电机 (BLDC) 矢量控制、SVPWM 空间调制、三环 PID 闭环；融合 AS5048A 磁编码器与 BMI088 六轴姿态卡尔曼滤波。</p>
+              <p>自主实现 BLDC 磁场定向控制（Clarke/Park 变换、SVPWM 空间调制、电流/速度/位置三闭环），精通 AS5048A 磁编码器与 BMI088 六轴卡尔曼姿态融合。</p>
             </div>
 
             <div class="skill-card">
@@ -605,15 +656,15 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20v14H2z"/><path d="M8 21h8M12 17v4"/><path d="M7 7h10M7 11h4"/></svg>
               </div>
               <h3>硬件 EDA 与 3D 机械</h3>
-              <p>熟练运用立创 EDA 专业版进行原理图设计与 4 层 PCB 高频功率布线；熟练使用 SolidWorks 开展机器人底盘机械建模与 3D 打印切片。</p>
+              <p>熟练运用立创 EDA 专业版进行原理图与 4 层高频功率 PCB 布线（如电赛底盘板、FOC驱动板）；熟练运用 SolidWorks 进行底盘与云台 3D 结构建模与打印切片。</p>
             </div>
 
             <div class="skill-card">
               <div class="skill-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
               </div>
-              <h3>边缘 AI 与全栈运营</h3>
-              <p>实操 MaixCam NPU 端侧视觉部署，微调 YOLO11 目标检测；熟悉 LVGL 8 GUI 开发；独立运营线上全栈策略空间，具备卓越学习与解决问题能力。</p>
+              <h3>边缘视觉与智能感知</h3>
+              <p>实操 MaixCam NPU 端侧视觉部署，微调 YOLO11 目标检测模型；熟悉 LVGL 8 高刷 GUI 界面；熟悉 C/C++、Python、CMake 现代构建链与通信协议设计。</p>
             </div>
           </div>
         </div>
@@ -622,37 +673,55 @@
       <!-- Projects Section -->
       <section class="section" id="projects">
         <div class="section-head">
-          <div class="section-tag">02 / PROJECTS</div>
-          <h2 class="section-title">核心工程与实践作品</h2>
-          <p class="section-desc">软硬协同、算法落地、真实工程落地闭环。</p>
+          <div class="section-tag">03 / PROJECTS</div>
+          <h2 class="section-title">核心工程实战项目</h2>
+          <p class="section-desc">软硬协同、算法闭环、真实竞赛与产品化验证。</p>
         </div>
 
         <div class="projects-grid">
           <!-- Project 1 -->
           <article class="project-card">
             <div>
-              <span class="project-badge">ROBOTICS & CONTROL</span>
-              <h3>轮腿自平衡双轮机器人</h3>
+              <span class="project-badge gold">NUEDC PROVINCIAL 1ST · 省一等奖</span>
+              <h3>车载平衡滚球运动控制系统（电赛H题）</h3>
               <p>
-                结合轮式机动与腿部自适应平衡机构。基于 STM32/ESP32 双核协同，编写自解耦分层架构，集成 BMI088 姿态融合滤波算法与动力学平衡控制回路，实现高速抗扰与位移平衡。
+                2026 年全国大学生电子设计竞赛（TI 杯）省级一等奖作品。基于自研底盘小车与双轴摆杆机构，搭载图传监测装置与高精度红外光电传感器。设计并实现了小车高速精确循迹（行驶整圈&lt;20s，停车偏差&lt;2cm）的同时，通过双闭环控制算法驱动摆杆保持钢球处于中心点稳定自平衡（误差绝对值&le;1cm）。
               </p>
             </div>
             <div class="tech-tags">
-              <span class="tech-tag">STM32/ESP32</span>
-              <span class="tech-tag">FreeRTOS</span>
-              <span class="tech-tag">BMI088 IMU</span>
-              <span class="tech-tag">平衡控制算法</span>
-              <span class="tech-tag">SolidWorks建模</span>
+              <span class="tech-tag">TI MSPM0 / STM32</span>
+              <span class="tech-tag">双闭环平衡算法</span>
+              <span class="tech-tag">自研底盘控制板</span>
+              <span class="tech-tag">无线图传</span>
+              <span class="tech-tag">电赛省一</span>
             </div>
           </article>
 
           <!-- Project 2 -->
           <article class="project-card">
             <div>
+              <span class="project-badge gold">KECHUANG CUP 1ST · 院一等奖</span>
+              <h3>MotionGuard 智能信息采集与信号传输系统</h3>
+              <p>
+                第十一届“帮普-科创杯”一等奖项目。以 ESP32-S3 为核心，运行 FreeRTOS 多任务。传感器层融合 MPU6050 运动监测与 OV5640 摄像头高速视频流，搭载 SSD1306 OLED 与音频模块。支持自检待命、低功耗深度休眠与移动异动触发抓拍，配合 Android 控制 App 实现高可用安防闭环。
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">ESP32-S3</span>
+              <span class="tech-tag">FreeRTOS</span>
+              <span class="tech-tag">MPU6050</span>
+              <span class="tech-tag">OV5640视频传输</span>
+              <span class="tech-tag">Android App</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div>
               <span class="project-badge">POWER ELECTRONICS</span>
               <h3>无刷电机 FOC 磁场定向驱动器</h3>
               <p>
-                自主开发 4 层高紧凑 FOC 驱动器。基于 STM32G431/F411 完成 Clarke/Park 变换与 SVPWM 空间矢量调制，集成 AS5048A 磁编码器，实现位置/速度/电流三环高速稳定闭环控制。
+                自主开发 4 层高紧凑 FOC 驱动器。基于 STM32G431/F411 完成 Clarke/Park 变换与 SVPWM 空间矢量调制，集成 AS5048A 磁编码器，实现位置/速度/电流三环高速稳定闭环控制。集成 LetterShell 调试终端与上位机监视接口。
               </p>
             </div>
             <div class="tech-tags">
@@ -664,30 +733,48 @@
             </div>
           </article>
 
-          <!-- Project 3 -->
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">ROBOTICS & CONTROL</span>
+              <h3>轮腿自平衡双轮机器人</h3>
+              <p>
+                结合轮式机动与腿部自适应平衡机构。基于 STM32/ESP32 双核协同，编写自解耦分层架构，集成 BMI088 姿态融合滤波算法与动力学平衡控制回路，实现高速抗扰与位移平衡。全套机械零件使用 SolidWorks 独立建模与 3D 打印加工。
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">STM32 / ESP32</span>
+              <span class="tech-tag">FreeRTOS</span>
+              <span class="tech-tag">BMI088 IMU</span>
+              <span class="tech-tag">LQR/PID控制</span>
+              <span class="tech-tag">SolidWorks建模</span>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
           <article class="project-card">
             <div>
               <span class="project-badge">COMPETITION PLATFORM</span>
-              <h3>智能车电赛多核运动底盘系统</h3>
+              <h3>电赛通用多核运动底盘控制系统</h3>
               <p>
-                针对电赛设计的高效控制底盘。采用 TI 新一代 MSPM0G3507 与 STM32 双主控方案，建立标准化的 Platform/BSP/Service 分层代码架构，支撑视觉循迹与精确定位。
+                针对电赛设计的高效通用控制底盘（ProPrj_MSPM0G3507 / ProPrj_F411）。采用 TI 新一代 MSPM0 与 STM32 双方案，建立标准化的 Platform/BSP/Service 分层代码架构，支撑视觉循迹、电机高精闭环与外设扩展。
               </p>
             </div>
             <div class="tech-tags">
               <span class="tech-tag">TI MSPM0G3507</span>
-              <span class="tech-tag">电赛底盘</span>
-              <span class="tech-tag">硬件PCB工程</span>
+              <span class="tech-tag">STM32F411</span>
+              <span class="tech-tag">电赛控制板PCB</span>
               <span class="tech-tag">分层解耦BSP</span>
             </div>
           </article>
 
-          <!-- Project 4 -->
+          <!-- Project 6 -->
           <article class="project-card">
             <div>
               <span class="project-badge">EDGE AI & HMI</span>
               <h3>ESP32-P4 / MaixCam 边缘智能交互终端</h3>
               <p>
-                探索前沿端侧边缘计算。利用 ESP32-P4 高性能 RISC-V 芯片驱动 MIPI-DSI 高刷显示屏与 LVGL 8 精致动效；结合 MaixCam NPU 训练并转换量化 YOLO11 视觉模型，实现毫秒级端侧检测。
+                探索端侧边缘智能与高刷人机交互。利用 ESP32-P4 高性能 RISC-V 芯片驱动 MIPI-DSI 高刷显示屏与 LVGL 8 精致动效；结合 MaixCam NPU 训练并转换量化 YOLO11 视觉模型，实现毫秒级端侧检测。
               </p>
             </div>
             <div class="tech-tags">
@@ -697,85 +784,6 @@
               <span class="tech-tag">YOLO11</span>
             </div>
           </article>
-
-          <!-- Project 5 -->
-          <article class="project-card">
-            <div>
-              <span class="project-badge">FULL-STACK WEB</span>
-              <h3>独立运营游戏策略攻略空间</h3>
-              <p>
-                将对游戏的爱好付诸全栈网站运营实践。独立规划系统架构、数据交互与极速检索机制，打造兼具实用性与流畅度的玩家攻略工具站。
-              </p>
-            </div>
-            <div>
-              <div class="tech-tags">
-                <span class="tech-tag">全栈架构</span>
-                <span class="tech-tag">独立运维</span>
-                <span class="tech-tag">数据结构</span>
-              </div>
-              <a class="project-link" href="https://andy-bit-sys.github.io/naruto-counter-space/" target="_blank" rel="noopener noreferrer">
-                访问线上攻略空间 ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Project 6 -->
-          <article class="project-card">
-            <div>
-              <span class="project-badge">INTERACTIVE 3D</span>
-              <h3>芯片寻迹 · 3D 立体贪吃蛇</h3>
-              <p>
-                将集成电路芯片微架构与经典贪吃蛇玩法结合。在立体芯片管脚与总线上寻迹收集信号节点，支持触屏操控、AI 自动寻路挑战及实时光影渲染。
-              </p>
-            </div>
-            <div>
-              <div class="tech-tags">
-                <span class="tech-tag">3D Canvas/WebGL</span>
-                <span class="tech-tag">AI自动寻路</span>
-                <span class="tech-tag">芯片主题</span>
-              </div>
-              <a class="project-link" href="snake.html">
-                立即在网页中体验 ↗
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Snake Game Interactive Banner -->
-        <div class="game-banner">
-          <div>
-            <h3>芯片寻迹 · 3D 贪吃蛇互动体验</h3>
-            <p>在立体的集成电路芯片表面畅快漫游，躲避边缘与自身障碍，支持手势滑动、键盘控制与 AI 自动演示！</p>
-          </div>
-          <a class="btn btn-primary" style="background:#38bdf8;color:#0f172a;border-color:#38bdf8;white-space:nowrap;" href="snake.html">
-            开始试玩游戏 🎮
-          </a>
-        </div>
-      </section>
-
-      <!-- Roadmap & Future Vision -->
-      <section class="section" id="roadmap">
-        <div class="section-head">
-          <div class="section-tag">03 / ROADMAP</div>
-          <h2 class="section-title">大学期间的三个进阶目标</h2>
-          <p class="section-desc">脚踏实地，笃行致远。</p>
-        </div>
-        <div class="roadmap-grid">
-          <div class="roadmap-step">
-            <div class="step-idx">STEP 01 / FOUNDATION</div>
-            <h4>夯实专业底座</h4>
-            <p>深入学好微电子、数字集成电路、电路分析与信号系统，将硬件底层电路与半导体物理规律牢固掌握。</p>
-          </div>
-          <div class="roadmap-step">
-            <div class="step-idx">STEP 02 / ENGINEERING</div>
-            <h4>工程闭环实践</h4>
-            <p>坚持从自研原理图、4层PCB画板焊接、结构3D建模到固件算法自研的全流程工程交付，把想法真正化为作品。</p>
-          </div>
-          <div class="roadmap-step">
-            <div class="step-idx">STEP 03 / COMPETITION</div>
-            <h4>竞赛协同成长</h4>
-            <p>积极参与全国大学生电子设计竞赛（电赛）与集创赛等高水平学科竞赛，在团队合作与对抗演练中突破技术边界。</p>
-          </div>
         </div>
       </section>
 
@@ -784,21 +792,21 @@
         <div class="section-head">
           <div class="section-tag">04 / CONNECT</div>
           <h2 class="section-title">联系与交流</h2>
-          <p class="section-desc">欢迎志同道合的老师、学长学姐与伙伴交流探讨。</p>
+          <p class="section-desc">欢迎各高校、实验室师生及技术同行交流探讨与合作。</p>
         </div>
 
         <div class="contact-box">
           <div>
-            <h3 style="font-size:22px;margin-bottom:12px;font-weight:700;">保持好奇，慢慢成长。</h3>
+            <h3 style="font-size:22px;margin-bottom:12px;font-weight:700;">笃行致远，博学力行。</h3>
             <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:24px;">
-              如果您有嵌入式、电机控制、电路设计或竞赛项目交流的想法，随时欢迎联系我！期待在探索技术的道路上结识更多优秀的朋友。
+              如果您有电赛、机器人、无刷电机 FOC、嵌入式系统或硬件 PCB 设计方面的交流意向，随时欢迎与我联系！
             </p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a class="btn btn-primary" href="output/pdf/刘锦桉_个人简介_详细版.pdf" download>
-                下载完整简历 PDF ↓
+              <a class="btn btn-primary" href="https://github.com/qiezibufu-ai" target="_blank" rel="noopener noreferrer">
+                访问 GitHub 个人主页 ↗
               </a>
-              <a class="btn btn-outline" href="https://github.com/qiezibufu-ai" target="_blank" rel="noopener noreferrer">
-                访问 GitHub ↗
+              <a class="btn btn-outline" href="#top">
+                返回顶部 ↑
               </a>
             </div>
           </div>
@@ -809,28 +817,28 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
               <div>
-                <div style="font-size:11px;color:var(--muted);">手机号码</div>
-                <strong>18998364503</strong>
+                <div style="font-size:11px;color:var(--muted);">联系电话</div>
+                <strong>13392977630</strong>
               </div>
             </div>
 
             <div class="contact-item">
               <div class="contact-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
               <div>
-                <div style="font-size:11px;color:var(--muted);">电子邮箱</div>
-                <strong>615873738@qq.com</strong>
+                <div style="font-size:11px;color:var(--muted);">院系班级</div>
+                <strong>广东工业大学 信息工程学院 25级电子信息类9班</strong>
               </div>
             </div>
 
             <div class="contact-item">
               <div class="contact-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </div>
               <div>
-                <div style="font-size:11px;color:var(--muted);">QQ / 微信</div>
-                <strong>615873738</strong>
+                <div style="font-size:11px;color:var(--muted);">学号与职务</div>
+                <strong>3125002391 · 班级学习委员</strong>
               </div>
             </div>
 
@@ -852,7 +860,7 @@
   <!-- Footer -->
   <footer>
     <div class="wrap">
-      <span>© 2026 刘锦桉 · 广东工业大学集成电路学院 · 保持好奇，慢慢成长</span>
+      <span>© 2026 黄伟诚 · 广东工业大学信息工程学院 · 笃行致远</span>
       <a href="#top" style="color:var(--primary);font-weight:600;">回到顶部 ↑</a>
     </div>
   </footer>
