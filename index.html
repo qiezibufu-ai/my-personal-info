@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘锦桉的个人主页 · 广东工业大学集成电路学院 · 专注于嵌入式系统、无刷电机FOC、硬件EDA与边缘AI">
+  <meta name="theme-color" content="#0f172a">
+  <title>刘锦桉 · 个人主页 | Embedded & IC Systems</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-subtle: #f1f5f9;
+      --ink: #0f172a;
+      --ink-secondary: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #0ea5e9;
+      --tag-bg: #f1f5f9;
+      --tag-border: #cbd5e1;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1120;
+        --card-bg: #131d31;
+        --card-subtle: #1a2744;
+        --ink: #f8fafc;
+        --ink-secondary: #cbd5e1;
+        --muted: #94a3b8;
+        --line: #1e293b;
+        --primary: #38bdf8;
+        --primary-hover: #0ea5e9;
+        --primary-light: #0c2d48;
+        --tag-bg: #1e293b;
+        --tag-border: #334155;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      height: 72px;
+      position: sticky;
+      top: 0;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
+    }
+    @media (prefers-color-scheme: dark) {
+      header { background: rgba(11, 17, 32, 0.92); }
+    }
+    header .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+    .brand-cube {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(37,99,235,0.4);
+    }
+    nav { display: flex; gap: 24px; font-size: 14px; font-weight: 500; }
+    nav a { color: var(--muted); transition: color .2s; }
+    nav a:hover { color: var(--primary); }
+
+    /* Hero Section */
+    .hero { padding: 64px 0 60px; overflow: hidden; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+    }
+    h1 {
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lead {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
+    .btn {
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .2s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: #ffffff;
+      border: 1px solid var(--ink);
+    }
+    @media (prefers-color-scheme: dark) {
+      .btn-primary { background: #38bdf8; color: #0b1120; border-color: #38bdf8; }
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -6px rgba(37,99,235,0.4);
+    }
+    .btn-outline {
+      background: var(--card-bg);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn-outline:hover {
+      background: var(--card-subtle);
+      transform: translateY(-2px);
+    }
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    /* Identity Chip Card */
+    .id-card {
+      background: linear-gradient(145deg, #0c182b, #112642);
+      border: 1px solid #1e3a5f;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 50px -15px rgba(12, 24, 43, 0.45);
+    }
+    .id-card-circuit {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      color: #1d4572;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .id-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #7dd3fc;
+      position: relative;
+      z-index: 2;
+    }
+    .id-core {
+      position: relative;
+      z-index: 2;
+      margin: 40px auto;
+      width: 160px;
+      height: 135px;
+      background: #091322;
+      border: 1.5px solid #38bdf8;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 8px rgba(30, 58, 95, 0.6), 0 0 25px rgba(56, 189, 248, 0.25);
+    }
+    .id-core strong {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: 6px;
+      line-height: 1.1;
+      color: #f0f9ff;
+    }
+    .id-core small {
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: #38bdf8;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .id-specs {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .id-spec-item p { font-size: 10px; color: #94a3b8; letter-spacing: 1px; }
+    .id-spec-item strong { font-size: 13px; color: #e2e8f0; font-weight: 600; }
+
+    /* Section Styles */
+    .section { padding: 68px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 36px; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .section-title { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+    .section-desc { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+    /* About & Skills Grid */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .about-text p {
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--ink-secondary);
+      line-height: 1.85;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform .2s, border-color .2s;
+    }
+    .skill-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+    .skill-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+    }
+    .skill-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .skill-card p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all .25s ease;
+      position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.08);
+      border-color: var(--primary);
+    }
+    .project-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .project-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .project-card p { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .tech-tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 5px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 14px;
+    }
+
+    /* Interactive Game Banner */
+    .game-banner {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border: 1px solid #334155;
+    }
+    .game-banner h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: #f8fafc; }
+    .game-banner p { font-size: 13.5px; color: #94a3b8; line-height: 1.7; }
+
+    /* Journey Roadmap */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .roadmap-step {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+    }
+    .roadmap-step::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 3px 3px 0 0;
+    }
+    .step-idx { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 2px; }
+    .roadmap-step h4 { font-size: 16px; font-weight: 700; margin: 10px 0 8px; }
+    .roadmap-step p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* Contact Card */
+    .contact-box {
+      background: var(--card-subtle);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .contact-list { display: flex; flex-direction: column; gap: 14px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--ink-secondary);
+    }
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-layout { grid-template-columns: 1fr; }
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; padding: 28px; }
+      .game-banner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      header nav a:not(:first-child) { display: none; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      footer .wrap { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="回到顶部">
+        <span class="brand-cube"></span>
+        <span>刘锦桉 · 主页</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#about">关于我</a>
+        <a href="#skills">技术能力</a>
+        <a href="#projects">工程项目</a>
+        <a href="#roadmap">规划展望</a>
+        <a href="#contact">联系交流</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">EMBEDDED SYSTEMS & IC DESIGN</div>
+          <h1>你好，我是<br><em>刘锦桉。</em></h1>
+          <p class="lead">
+            广东工业大学 · 集成电路学院 2026级集成电路1班。<br>
+            专注于嵌入式底层与控制算法（FOC / FreeRTOS）、硬件电路设计（EDA / PCB）与端侧边缘智能（NPU / YOLO11）。保持好奇，以工匠精神把想法变成高可用实体。
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">
+              浏览工程项目
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <a class="btn btn-outline" href="snake.html">
+              玩芯片 3D 贪吃蛇 🎮
+            </a>
+            <a class="btn btn-outline" href="output/pdf/刘锦桉_个人简介_详细版.pdf" download>
+              下载个人简历 PDF
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            </a>
+          </div>
+          <div class="meta-pills">
+            <span class="meta-item"><span class="dot"></span>广东省广州市 · GDUT 大学城校区</span>
+            <span class="meta-item">· 嵌入式系统 / 集成电路</span>
+            <span class="meta-item">· 电机控制 FOC / 边缘视觉</span>
+          </div>
+        </div>
+
+        <!-- Silicon Hardware Badge -->
+        <div class="id-card" aria-label="集成电路与电机控制主题名片">
+          <svg class="id-card-circuit" viewBox="0 0 400 350" preserveAspectRatio="none" fill="none">
+            <path d="M0 80h90l35 35h50M0 200h130M400 120h-70l-30 30h-40M400 230h-90l-30-30h-40M180 0v70l20 20v40M250 0v60l-25 25v45M0 260h80l40-40h50M400 60h-60l-45 45h-35" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="90" cy="80" r="3.5" fill="currentColor"/>
+            <circle cx="330" cy="120" r="3.5" fill="currentColor"/>
+            <circle cx="80" cy="260" r="3.5" fill="currentColor"/>
+            <circle cx="340" cy="60" r="3.5" fill="currentColor"/>
+          </svg>
+          <div class="id-top">
+            <span>INTEGRATED CIRCUITS</span>
+            <span>CLASS 01 · 2026</span>
+          </div>
+          <div class="id-core">
+            <strong>LJA</strong>
+            <small>FOC & HARDWARE</small>
+          </div>
+          <div class="id-specs">
+            <div class="id-spec-item">
+              <p>ARCHITECTURE</p>
+              <strong>ARM & RISC-V</strong>
+            </div>
+            <div class="id-spec-item">
+              <p>ALGORITHM</p>
+              <strong>FOC / SVPWM</strong>
+            </div>
+            <div class="id-spec-item">
+              <p>HARDWARE</p>
+              <strong>4-Layer PCB</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <!-- About Section -->
+      <section class="section" id="about">
+        <div class="section-head">
+          <div class="section-tag">01 / PROFILE</div>
+          <h2 class="section-title">关于我与技术热忱</h2>
+          <p class="section-desc">从好奇心出发，在理论与动手中探寻真知。</p>
+        </div>
+        <div class="about-layout">
+          <div class="about-text">
+            <p>
+              大家好，我是<strong>刘锦桉</strong>，来自广东省广州市，现就读于<strong>广东工业大学集成电路学院</strong>（2026级集成电路1班）。
+            </p>
+            <p>
+              我对硬件底层的运行机制与智能运动控制充满热爱。大一开始便深入钻研 STM32、TI MSPM0、ESP32 与 RISC-V 体系架构，精通 FreeRTOS 实时多任务解耦，亲手设计并打样 4 层高频/功率混合 PCB 控制板。
+            </p>
+            <p>
+              在算法控制上，我深入推导并落地无刷电机 FOC 磁场定向控制（Park/Clarke 变换、SVPWM），完成了轮腿自平衡机器人的动力学解算。在课余时间，我喜欢在绿茵场上踢足球挥洒汗水，也热衷于独立开发并运营线上社群。
+            </p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">
+              <span class="tech-tag">广东 · 广州</span>
+              <span class="tech-tag">广东工业大学</span>
+              <span class="tech-tag">集成电路学院</span>
+              <span class="tech-tag">嵌入式组 & IC组</span>
+              <span class="tech-tag">足球爱好</span>
+            </div>
+          </div>
+
+          <div class="skills-grid" id="skills">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </div>
+              <h3>嵌入式与系统架构</h3>
+              <p>精通 STM32F4/G4、TI MSPM0、ESP32-P4 (RISC-V)；熟练应用 FreeRTOS 多任务、分层解耦架构 (App/Service/BSP) 与 LetterShell 终端。</p>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M7 7l3 3M14 14l3 3"/></svg>
+              </div>
+              <h3>电机控制与 FOC 算法</h3>
+              <p>精通无刷直流电机 (BLDC) 矢量控制、SVPWM 空间调制、三环 PID 闭环；融合 AS5048A 磁编码器与 BMI088 六轴姿态卡尔曼滤波。</p>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20v14H2z"/><path d="M8 21h8M12 17v4"/><path d="M7 7h10M7 11h4"/></svg>
+              </div>
+              <h3>硬件 EDA 与 3D 机械</h3>
+              <p>熟练运用立创 EDA 专业版进行原理图设计与 4 层 PCB 高频功率布线；熟练使用 SolidWorks 开展机器人底盘机械建模与 3D 打印切片。</p>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <h3>边缘 AI 与全栈运营</h3>
+              <p>实操 MaixCam NPU 端侧视觉部署，微调 YOLO11 目标检测；熟悉 LVGL 8 GUI 开发；独立运营线上全栈策略空间，具备卓越学习与解决问题能力。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="section" id="projects">
+        <div class="section-head">
+          <div class="section-tag">02 / PROJECTS</div>
+          <h2 class="section-title">核心工程与实践作品</h2>
+          <p class="section-desc">软硬协同、算法落地、真实工程落地闭环。</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">ROBOTICS & CONTROL</span>
+              <h3>轮腿自平衡双轮机器人</h3>
+              <p>
+                结合轮式机动与腿部自适应平衡机构。基于 STM32/ESP32 双核协同，编写自解耦分层架构，集成 BMI088 姿态融合滤波算法与动力学平衡控制回路，实现高速抗扰与位移平衡。
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">STM32/ESP32</span>
+              <span class="tech-tag">FreeRTOS</span>
+              <span class="tech-tag">BMI088 IMU</span>
+              <span class="tech-tag">平衡控制算法</span>
+              <span class="tech-tag">SolidWorks建模</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">POWER ELECTRONICS</span>
+              <h3>无刷电机 FOC 磁场定向驱动器</h3>
+              <p>
+                自主开发 4 层高紧凑 FOC 驱动器。基于 STM32G431/F411 完成 Clarke/Park 变换与 SVPWM 空间矢量调制，集成 AS5048A 磁编码器，实现位置/速度/电流三环高速稳定闭环控制。
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">STM32G431</span>
+              <span class="tech-tag">FOC矢量控制</span>
+              <span class="tech-tag">4层PCB设计</span>
+              <span class="tech-tag">AS5048A</span>
+              <span class="tech-tag">SVPWM</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">COMPETITION PLATFORM</span>
+              <h3>智能车电赛多核运动底盘系统</h3>
+              <p>
+                针对电赛设计的高效控制底盘。采用 TI 新一代 MSPM0G3507 与 STM32 双主控方案，建立标准化的 Platform/BSP/Service 分层代码架构，支撑视觉循迹与精确定位。
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">TI MSPM0G3507</span>
+              <span class="tech-tag">电赛底盘</span>
+              <span class="tech-tag">硬件PCB工程</span>
+              <span class="tech-tag">分层解耦BSP</span>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">EDGE AI & HMI</span>
+              <h3>ESP32-P4 / MaixCam 边缘智能交互终端</h3>
+              <p>
+                探索前沿端侧边缘计算。利用 ESP32-P4 高性能 RISC-V 芯片驱动 MIPI-DSI 高刷显示屏与 LVGL 8 精致动效；结合 MaixCam NPU 训练并转换量化 YOLO11 视觉模型，实现毫秒级端侧检测。
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">ESP32-P4 (RISC-V)</span>
+              <span class="tech-tag">LVGL 8 GUI</span>
+              <span class="tech-tag">MaixCam NPU</span>
+              <span class="tech-tag">YOLO11</span>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">FULL-STACK WEB</span>
+              <h3>独立运营游戏策略攻略空间</h3>
+              <p>
+                将对游戏的爱好付诸全栈网站运营实践。独立规划系统架构、数据交互与极速检索机制，打造兼具实用性与流畅度的玩家攻略工具站。
+              </p>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tech-tag">全栈架构</span>
+                <span class="tech-tag">独立运维</span>
+                <span class="tech-tag">数据结构</span>
+              </div>
+              <a class="project-link" href="https://andy-bit-sys.github.io/naruto-counter-space/" target="_blank" rel="noopener noreferrer">
+                访问线上攻略空间 ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card">
+            <div>
+              <span class="project-badge">INTERACTIVE 3D</span>
+              <h3>芯片寻迹 · 3D 立体贪吃蛇</h3>
+              <p>
+                将集成电路芯片微架构与经典贪吃蛇玩法结合。在立体芯片管脚与总线上寻迹收集信号节点，支持触屏操控、AI 自动寻路挑战及实时光影渲染。
+              </p>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tech-tag">3D Canvas/WebGL</span>
+                <span class="tech-tag">AI自动寻路</span>
+                <span class="tech-tag">芯片主题</span>
+              </div>
+              <a class="project-link" href="snake.html">
+                立即在网页中体验 ↗
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Snake Game Interactive Banner -->
+        <div class="game-banner">
+          <div>
+            <h3>芯片寻迹 · 3D 贪吃蛇互动体验</h3>
+            <p>在立体的集成电路芯片表面畅快漫游，躲避边缘与自身障碍，支持手势滑动、键盘控制与 AI 自动演示！</p>
+          </div>
+          <a class="btn btn-primary" style="background:#38bdf8;color:#0f172a;border-color:#38bdf8;white-space:nowrap;" href="snake.html">
+            开始试玩游戏 🎮
+          </a>
+        </div>
+      </section>
+
+      <!-- Roadmap & Future Vision -->
+      <section class="section" id="roadmap">
+        <div class="section-head">
+          <div class="section-tag">03 / ROADMAP</div>
+          <h2 class="section-title">大学期间的三个进阶目标</h2>
+          <p class="section-desc">脚踏实地，笃行致远。</p>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-step">
+            <div class="step-idx">STEP 01 / FOUNDATION</div>
+            <h4>夯实专业底座</h4>
+            <p>深入学好微电子、数字集成电路、电路分析与信号系统，将硬件底层电路与半导体物理规律牢固掌握。</p>
+          </div>
+          <div class="roadmap-step">
+            <div class="step-idx">STEP 02 / ENGINEERING</div>
+            <h4>工程闭环实践</h4>
+            <p>坚持从自研原理图、4层PCB画板焊接、结构3D建模到固件算法自研的全流程工程交付，把想法真正化为作品。</p>
+          </div>
+          <div class="roadmap-step">
+            <div class="step-idx">STEP 03 / COMPETITION</div>
+            <h4>竞赛协同成长</h4>
+            <p>积极参与全国大学生电子设计竞赛（电赛）与集创赛等高水平学科竞赛，在团队合作与对抗演练中突破技术边界。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <div class="section-head">
+          <div class="section-tag">04 / CONNECT</div>
+          <h2 class="section-title">联系与交流</h2>
+          <p class="section-desc">欢迎志同道合的老师、学长学姐与伙伴交流探讨。</p>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <h3 style="font-size:22px;margin-bottom:12px;font-weight:700;">保持好奇，慢慢成长。</h3>
+            <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:24px;">
+              如果您有嵌入式、电机控制、电路设计或竞赛项目交流的想法，随时欢迎联系我！期待在探索技术的道路上结识更多优秀的朋友。
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a class="btn btn-primary" href="output/pdf/刘锦桉_个人简介_详细版.pdf" download>
+                下载完整简历 PDF ↓
+              </a>
+              <a class="btn btn-outline" href="https://github.com/qiezibufu-ai" target="_blank" rel="noopener noreferrer">
+                访问 GitHub ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);">手机号码</div>
+                <strong>18998364503</strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);">电子邮箱</div>
+                <strong>615873738@qq.com</strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);">QQ / 微信</div>
+                <strong>615873738</strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);">GitHub</div>
+                <strong><a href="https://github.com/qiezibufu-ai" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">github.com/qiezibufu-ai</a></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <span>© 2026 刘锦桉 · 广东工业大学集成电路学院 · 保持好奇，慢慢成长</span>
+      <a href="#top" style="color:var(--primary);font-weight:600;">回到顶部 ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
